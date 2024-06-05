@@ -6,9 +6,9 @@ import cartRoutes from './routes/cart.route.js'
 import mongoose from 'mongoose';
 
 mongoose 
-    .connect('mongodb+srv://vaisuro45:vaisagh@mern.okq28uk.mongodb.net/?retryWrites=true&w=majority&appName=mern')
-    .then(()=>console.log("connected to mongodb"))
-    .catch((err)=> {console.log("could not connect to db")})
+.connect(`mongodb+srv://vaisuro45:vaisagh@mern.okq28uk.mongodb.net/?retryWrites=true&w=majority&appName=mern`)
+.then(()=>console.log("connected to mongodb"))
+.catch((err)=> {console.log("could not connect to db")})
 
 const app = express();
 
@@ -21,4 +21,5 @@ app.use('/api/user', userRoutes)
 app.use('/api/product', productRoutes)
 app.use('/api/cart', cartRoutes)
 
-app.listen(3000, ()=>{console.log("Server running at port 3000");})
+const PORT = process.env.PORT || 3000
+app.listen(PORT, ()=>{console.log(`Server running at port ${PORT}`)})

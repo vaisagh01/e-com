@@ -36,7 +36,7 @@ export default function CategoryPage() {
     return (
         <div className=' flex py-20'>
             <Aside />
-            <div className='lg:ml-52 border-l-[1px] border-neutral-300 md:ml-52 px-10 ml-5'>
+            <div className='lg:ml-52  border-neutral-300 md:ml-52 px-10 ml-5'>
                 <h1 className='text-2xl font-medium text-neutral-700 '>
                     Search through {category} Products
                 </h1>
@@ -60,7 +60,7 @@ export default function CategoryPage() {
                     {
                         filteredData?.map((item,index) => {
                             return (
-                                <Card onClick={()=>{nav(`/product/${item.type}`)}} key={index} className="max-w-72 min-w-64 cursor-pointer hover:scale-[1.01] transition-all">
+                                <Card onClick={()=>{nav(`/product/${item.type}`)}} key={index} className="max-w-52 min-w-52 cursor-pointer hover:scale-[1.01] transition-all">
                                     <img className=' border-[1px] border-slate-300 rounded-md' src={'/default.jpg'} alt="" />
                                     <CardHeader>
                                         <CardTitle className="text-blue-500 font-sm">{item?.type}</CardTitle>

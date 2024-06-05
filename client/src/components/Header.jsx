@@ -2,7 +2,7 @@ import React from 'react'
 import { Input } from './ui/input'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { logOut } from '@/redux/slice'
-import { CircleUserRound, ShoppingCart, Menu, LogOut, UserRound } from 'lucide-react';
+import { CircleUserRound, ShoppingCart, Menu, LogOut, UserRound, ShoppingBag } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -31,8 +31,9 @@ export default function Header() {
 
   return (
     <div className='w-screen fixed z-50 text-slate-500 flex gap-2 justify-around items-center h-14 bg-white border-[1px] border-slate-200'>
-      <NavLink to={'/'}  className='text-3xl  font-serif'>
-        e-com
+      <NavLink to={'/'}  className='text-3xl flex gap-2 items-center  font-serif'>
+        <ShoppingBag />
+        <p className='hidden sm:hidden md:flex lg:flex'>e-com</p> 
       </NavLink>
       <SearchBar />
       

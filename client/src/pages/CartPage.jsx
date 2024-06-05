@@ -30,10 +30,10 @@ export default function CartPage() {
                 cart.products?.map((item,index) => {
                     return (
                             <div key={index} className='flex items-center  p-2 max-h-36 h-34 max-w-[70%]'>
-                                <img className='max-h-32' src="/default.jpg" alt="" />
+                                <img className='max-h-32 rounded-lg' src="/default.jpg" alt="" />
                                 <div className='w-full h-32 flex flex-col sm:flex-col md:flex-row lg:flex-row items-start p-3 justify-between'>
                                     <div className='flex gap-2 h-full items-center justify-between'>
-                                        <h1 className='text-xl'>{item.type}</h1>
+                                        <h1 className='text-2xl font-medium text-neutral-500'>{item.type}</h1>
                                         {/* <p>{item.color}</p> */}
                                         {/* <p>{item.size}</p> */}
                                     </div>

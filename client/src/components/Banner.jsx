@@ -13,10 +13,10 @@ export default function Banner() {
     <div className='p-1 rounded-lg bg-white'>
       <Carousel>
         <CarouselContent className="sm:w-full gap-1 md:w-full lg:w-1/2">
-            <CarouselItem><img src="/offer-banner.jpg" alt="" /></CarouselItem>
-            <CarouselItem><img src="/offer-banner.jpg" alt="" /></CarouselItem>
-            <CarouselItem><img src="/offer-banner.jpg" alt="" /></CarouselItem>
-            <CarouselItem><img src="/offer-banner.jpg" alt="" /></CarouselItem>
+            <CarouselItem><img className='rounded-2xl' src="/offer-banner.jpg" alt="" /></CarouselItem>
+            <CarouselItem><img className='rounded-2xl' src="/offer-banner.jpg" alt="" /></CarouselItem>
+            <CarouselItem><img className='rounded-2xl' src="/offer-banner.jpg" alt="" /></CarouselItem>
+            <CarouselItem><img className='rounded-2xl' src="/offer-banner.jpg" alt="" /></CarouselItem>
         </CarouselContent>
         <CarouselPrevious />
         <CarouselNext />

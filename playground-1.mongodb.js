@@ -19,7 +19,7 @@ db.getCollection('products').insertMany([
     "unique": true,
     "require": true,
     "desc": "Secure and stylish wallet to hold your essentials",
-    "img": "https://example.com/wallet.jpg",
+    "img": "https://media.istockphoto.com/id/180756294/photo/wallet.jpg?s=612x612&w=0&k=20&c=sc6I6KsEbiv9Y4BtKji8w5rBYono2X63-ipfhYk6Ytg=",
     "categories": ["Accessories"],
     "size": "",
     "color": "Brown",
