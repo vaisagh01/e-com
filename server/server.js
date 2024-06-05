@@ -4,17 +4,7 @@ import userRoutes from './routes/user.route.js'
 import productRoutes from './routes/product.route.js'
 import cartRoutes from './routes/cart.route.js'
 import mongoose from 'mongoose';
-// if (process.env.NODE_ENV === "production") {
-//     const path = require("path");
-//     app.use(express.static(path.resolve(__dirname, 'client', 'build')));
-//     app.get("*", (req, res) => {
-//         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'),function (err) {
-//             if(err) {
-//                 res.status(500).send(err)
-//             }
-//         });
-//     })
-// }
+
 mongoose 
     .connect('mongodb+srv://vaisuro45:vaisagh@mern.okq28uk.mongodb.net/?retryWrites=true&w=majority&appName=mern')
     .then(()=>console.log("connected to mongodb"))

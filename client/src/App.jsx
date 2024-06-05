@@ -12,6 +12,7 @@ import ProductPage from './pages/ProductPage'
 import CategoryPage from './pages/CategoryPage'
 import CartPage from './pages/CartPage'
 import Cart from './redux/cart'
+import Footer from './components/Footer'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -29,6 +30,7 @@ function App() {
         <Route path='/product/:product' element={!isLoggedIn ? <Navigate to={'/'}/> : <ProductPage />} />
         <Route path='/cart' element={!isLoggedIn ? <Navigate to={'/'}/> : <CartPage />} />
       </Routes>
+      <Footer/>
       <Toaster />
     </BrowserRouter>
   )

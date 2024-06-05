@@ -55,7 +55,7 @@ export default function Signin() {
       }
     }
     return (
-    <div className='w-screen h-screen'>
+    <div className='w-screen h-screen bg-neutral-100'>
       <section className=' h-screen p-auto items-center justify-center flex'>
         <Card className="w-[60%] shadow-md flex flex-col justify-between min-w-96 space-y-5 px-9 py-9">
             <CardHeader>

@@ -10,9 +10,9 @@ import {
 
 export default function Banner() {
   return (
-    <div className=''>
+    <div className='p-1 rounded-lg bg-white'>
       <Carousel>
-        <CarouselContent className="sm:w-full md:w-full lg:w-1/2">
+        <CarouselContent className="sm:w-full gap-1 md:w-full lg:w-1/2">
             <CarouselItem><img src="/offer-banner.jpg" alt="" /></CarouselItem>
             <CarouselItem><img src="/offer-banner.jpg" alt="" /></CarouselItem>
             <CarouselItem><img src="/offer-banner.jpg" alt="" /></CarouselItem>

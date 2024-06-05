@@ -1,25 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import updateCart from "./update";
-updateCart({products:[], userId:'66570afcf9adb42d2d5347e7'})
-// const [list, setList] = useState([]);
-// const cart = useSelector(state => state.cart)
-
-// const fetchData = async ()=>{
-//     const res = await fetch('/api/cart/',{
-//         method:'POST',
-//         headers: {
-//             'Content-Type': 'application/json'
-//         },
-//         body : JSON.stringify({userId:userId})
-//     });
-//     const data = await res.json();
-//     // setList(data.products)
-
-//     console.log(data);
-// }
-// fetchData();
 
 const initialState = {
     userId:"",
@@ -42,28 +23,30 @@ const cartSlice = createSlice({
                 product => product.type === action.payload.type // Use a unique identifier (id)
             );
             state.products[itemIndex].quantity += 1;
+            state.total += action.payload.price
         },
         Decrement: (state, action) => {
             const itemIndex = state.products.findIndex(
                 product => product.type === action.payload.type // Use a unique identifier (id)
             );
-            if(state.products[itemIndex].quantity > 0){
+            if(state.products[itemIndex].quantity > 1){
                 state.products[itemIndex].quantity -= 1;
+                state.total -= action.payload.price
             }
         },
         deleteProduct: (state, action) => {
             const itemIndex = state.products.findIndex(
               product => product.type === action.payload.type // Use a unique identifier (id)
             );
-            console.log(itemIndex);
+            state.total -= state?.products[itemIndex]?.price * state?.products[itemIndex]?.quantity || null; // Update total based on removed item
+            console.log(state.products[itemIndex].quantity);
             if (itemIndex !== -1) {
               const updatedProducts = state.products.filter(
                 (_, index) => index !== itemIndex
               );
-              state.products = updatedProducts;
-      
-              state.quantity -= 1;
-              state.total -= state.products[itemIndex]?.price * state.products[itemIndex]?.quantity; // Update total based on removed item
+            state.products = updatedProducts;
+    
+            state.quantity -= 1;
             }
         }
         

@@ -41,7 +41,6 @@ export default function CategoryPage() {
                     Search through {category} Products
                 </h1>
                 <div className='flex items-center  justify-between py-4 gap-5'>
-                    {/* <p className='text-slate-400'>Showing {filteredData?.length} products out of {filteredData.length} products</p> */}
                     <div className='flex items-center gap-4'>
                         <h1>Sort by</h1>
                         <Select>

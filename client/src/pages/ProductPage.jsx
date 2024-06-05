@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { Button } from '@/components/ui/button';
-import { ShoppingBag, ZapIcon, Minus, Plus, Check, ChevronLeft } from 'lucide-react';
+import { ShoppingBag, ZapIcon, Minus, Plus, Check, ChevronLeft, Star } from 'lucide-react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addProduct } from '@/redux/cart';
 import { toast } from "sonner"
@@ -27,16 +27,16 @@ export default function ProductPage() {
     const isThere = cart.find(i => i.type === product) ? true : false
     const handleAddCart = (type) => {
       toast(`${product} added to cart `)
-      dispatch(addProduct({...item, quantity:count, price:item.price * count}))
+      dispatch(addProduct({...item, quantity:count, price:item.price}))
     }
   return (
     <div className='pt-14 flex flex-col'>
       <Button onClick={()=>{nav(-1)}} variant="ghost" className="max-w-18 text-neutral-600 gap-2 absolute"><ChevronLeft />Back</Button>
       <div className='flex flex-col lg:flex-row md:flex-row gap-5 h-[600px] px-10 lg:px-36 py-10 items-center justify-start'>
-        <div className=''>
+        <div className='sm:w-3/4 w-3/4 lg:w-auto'>
             <img className='lg:h-3/4 md:h-1/2 h-48 rounded-lg' src="/default.jpg" alt="" />
         </div>
-        <div className='min-h-full overflow-y-scroll hide-scroll lg:border-l-[1px] border-slate-300 flex flex-col lg:p-10'>
+        <div className=' overflow-y-scroll hide-scroll lg:border-l-[1px] border-slate-300 flex flex-col lg:p-10'>
             <div>
                 <h1 className='text-5xl mb-2  font-medium'>{item?.type}</h1>
                 <p className='mb-2 '><span className=''>Color-</span> {item?.color}</p>
@@ -59,7 +59,16 @@ export default function ProductPage() {
                   }
                     <Button className="bg-amber-400 hover:bg-amber-500 flex gap-2">Buy Now <ZapIcon /></Button>
                 </div>
-                <p className='mb-5'>Rating</p>
+                <div className='my-5'>
+                  <h1 className='text-lg font-medium text-neutral-500'>Rating</h1>
+                  <ul className='flex my-2'>
+                    <li><Star className='text-amber-500 fill-amber-500'/></li>
+                    <li><Star className='text-amber-500 fill-amber-500'/></li>
+                    <li><Star className='text-amber-500 fill-amber-500'/></li>
+                    <li><Star className='text-neutral-300 fill-neutral-300'/></li>
+                    <li><Star className='text-neutral-300 fill-neutral-300'/></li>
+                  </ul>
+                </div>
             </div>
         </div>
       </div>

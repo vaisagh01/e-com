@@ -20,7 +20,7 @@ export default function Home() {
   filtered();
   
   return (
-    <div className='px-10 lg:px-20 md:px-20 py-16'>
+    <div className='bg-neutral-100 px-10 lg:px-20 md:px-20 py-16'>
       <Categories />
       <Banner />
       <CategorySlider category={"Homeware"} />

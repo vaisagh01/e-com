@@ -8,7 +8,7 @@ export default defineConfig({
     port:5000,
     proxy: {
       '/api': {
-        target: 'https://e-com-topaz.vercel.app/',
+        target: 'http://127.0.0.1:3000',
         secure: false,
       },
     }

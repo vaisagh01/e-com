@@ -6,7 +6,6 @@ export default function Aside() {
     const handleSlider = (e) => {
         setSliderValue([e.target.value])
     }
-    console.log(sliderValue);
   return (
     <aside className=' p-5 h-3/4 mx-5 hidden md:flex lg:flex fixed min-w-44'>
         <div className='flex border-b-[1px] border-neutral-300 w-full h-32 gap-3 p-2 flex-col'>

@@ -14,4 +14,18 @@ router.get('/find/:id', async (req,res) => {
     }
 })
 
+router.put('/update/:id',async (req,res) => {
+    try {
+        const updatedUser = await User.findByIdAndUpdate(
+            req.params.id,
+            {
+                $set:req.body
+            },{new:true}
+        )
+        console.log(updatedUser);
+        res.status(200).json("User updated")
+    } catch (err){
+        res.status(500).json({message:err})
+    }
+})
 export default router;

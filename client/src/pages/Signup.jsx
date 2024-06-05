@@ -46,7 +46,10 @@ export default function Signup() {
     }
 
     return (
-    <div className='w-screen h-screen bg-neutral-950'>
+    <div className='w-screen h-screen flex items-center justify-evenly gap-3  bg-neutral-100'>
+      <div>
+        <h1 className='text-neutral-500 font-serif text-xl'>Welcome!</h1>
+      </div>
       <section className=' h-screen p-auto items-center justify-center flex'>
         <Card className="w-1/2 min-w-96 space-y-5 px-5 py-9">
             <CardHeader>
@@ -72,6 +75,7 @@ export default function Signup() {
             </CardFooter>
         </Card>
       </section>
+      
     </div>
   )
 }
