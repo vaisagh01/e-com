@@ -8,7 +8,7 @@ import {} from 'dotenv/config'
 
 
 mongoose 
-.connect(process.env.MONGO_DB_URI)
+.connect(`mongodb+srv://vaisuro45:vaisagh@mern.okq28uk.mongodb.net/?retryWrites=true&w=majority&appName=mern`)
 .then(()=>console.log("connected to mongodb"))
 .catch((err)=> {console.log("could not connect to db")})
 
