@@ -4,13 +4,11 @@ import userRoutes from './routes/user.route.js'
 import productRoutes from './routes/product.route.js'
 import cartRoutes from './routes/cart.route.js'
 import mongoose from 'mongoose';
-import path from 'path'
+import {} from 'dotenv/config'
 
-const __dirname = path.resolve();
-console.log(__dirname);
 
 mongoose 
-.connect(`mongodb+srv://vaisuro45:vaisagh@mern.okq28uk.mongodb.net/?retryWrites=true&w=majority&appName=mern`)
+.connect(process.env.MONGO_DB_URI)
 .then(()=>console.log("connected to mongodb"))
 .catch((err)=> {console.log("could not connect to db")})
 
@@ -26,5 +24,5 @@ app.use('/api/product', productRoutes)
 app.use('/api/cart', cartRoutes)
 
 
-const PORT = 8080
+const PORT = process.env.PORT
 app.listen(PORT, ()=>{console.log(`Server running at port ${PORT}`)})
